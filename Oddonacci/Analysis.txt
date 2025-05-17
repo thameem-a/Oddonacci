@@ -1,0 +1,26 @@
+// Affan Thameem  	
+// Data Structures and Algorithms
+// Analysis of Algorithms Results
+
+1. Multiple Recursive Algorithm:
+The multiple-recursive algorithm shows exponential growth in execution time. As the input value n increases, the time required grows exponentially.
+For instance, Oddonacci(5) takes approximately 1.4 million nanoseconds, while Oddonacci(45) takes over 876 billion nanoseconds. 
+This is a result of the algorithm recalculating the same values multiple times, leading to a time complexity of O(3^n).
+This makes the multiple-recursive approach impractical for large values of n.
+************************************************************************************************
+
+2. Linear Recursive Algorithm:
+The linear-recursive algorithm shows consistent linear growth in execution time. 
+While it performs better than the multiple-recursive version, it is still slower than the tail-recursive approach.
+For example, Oddonacci(5) takes 4,325 nanoseconds, and Oddonacci(45) takes 19,265 nanoseconds.
+The time complexity of this algorithm is O(n), as it avoids the repeated computation of previous values by carrying forward intermediate results.
+************************************************************************************************
+
+3. Tail-Recursive Algorithm:
+The tail-recursive algorithm consistently performs the best among the three approaches. 
+It has the lowest execution time for all tested values of n, demonstrating the efficiency of this approach.
+For example, Oddonacci(5) takes 2,832 nanoseconds, and even for larger inputs like Oddonacci(45), it takes only 6,534 nanoseconds.
+The tail-recursive method optimizes the function call stack by reusing the same stack frame, which allows it to handle large values of n efficiently with a linear time complexity O(n).
+************************************************************************************************
+
+However, after many attempts the furthest my machine could run was Oddonacci(45) in approx. 10 minutes, letting it run for about 5 minutes after, my laptop fan started to spin increasingly and after 20 minutes no return was outputted. However, from my many attempts I was able to conclude that Oddonacci(30) was the most consistent and furthest my machine could output after immodestly pressing run. 

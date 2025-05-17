@@ -1,0 +1,58 @@
+
+// Pseudo Code for Three Oddonacci Calculators
+
+Algorithm LinearOddonacci(n)
+    Input: n, the position in the Oddonacci sequence
+    Output: The n-th Oddonacci number
+
+    If n = 1:
+        Return [1, 0, 0]  // Oddonacci(1) = 1, Oddonacci(0) = 0, Oddonacci(-1) = 0
+    Else if n = 2:
+        Return [1, 1, 0]  // Oddonacci(2) = 1, Oddonacci(1) = 1, Oddonacci(0) = 0
+    Else if n = 3:
+        Return [1, 1, 1]  // Oddonacci(3) = 1, Oddonacci(2) = 1, Oddonacci(1) = 1
+    Else:
+        // Recursively call LinearOddonacci for (n-1)
+        temp = LinearOddonacci(n - 1)
+        
+        // Calculate Oddonacci(n) as the sum of the last three values
+        answer = [temp[0] + temp[1] + temp[2], temp[0], temp[1]]
+
+        Return answer  // Return the current Oddonacci and its two preceding numbers
+
+************************************************************************************************
+Algorithm multipleOddonacci(n)
+    Input: n, the position in the Oddonacci sequence
+    Output: The n-th Oddonacci number
+
+    If n = 1 OR n = 2 OR n = 3:
+        Return 1  // Base cases: Oddonacci(1), Oddonacci(2), Oddonacci(3) all return 1
+    Else:
+        // Recursive case: sum of Oddonacci(n-1), Oddonacci(n-2), and Oddonacci(n-3)
+        Return multipleOddonacci(n - 1) + multipleOddonacci(n - 2) + multipleOddonacci(n - 3)
+
+************************************************************************************************
+ Algorithm oddonacciTailRec(n, a, b, c)
+    Input: 
+        - n: The position in the Oddonacci sequence
+        - a, b, c: The last three Oddonacci numbers
+    
+    Output: The n-th Oddonacci number
+
+    If n = 1:
+        Return a  // Return the first value in the sequence
+    Else if n = 2:
+        Return b  // Return the second value in the sequence
+    Else if n = 3:
+        Return c  // Return the third value in the sequence
+    Else:
+        // Recursive call: shift parameters and compute next Oddonacci number
+        Return oddonacciTailRec(n - 1, b, c, a + b + c)
+************************************************************************************************
+Algorithm oddonacciTail(n)
+    Input: n, the position in the Oddonacci sequence
+    Output: The n-th Oddonacci number
+
+    // Initialize recursion with base values (1, 1, 1) for Oddonacci(1), Oddonacci(2), Oddonacci(3)
+    Return oddonacciTailRec(n, 1, 1, 1)
+
