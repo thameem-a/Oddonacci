@@ -59,9 +59,10 @@ Oddonacci
 
 ## ✅ How to Run
 
-Compile and run using any Java compiler:
+Compile and run using any Java compiler. Make sure you have Java installed:
 
 ```bash
+java -version
 javac Driver.java Oddonacci.java
 java Driver
 ```
